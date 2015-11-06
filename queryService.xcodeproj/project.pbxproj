@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		2AC734391BE72DD6002CC025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC734381BE72DD6002CC025 /* AppDelegate.swift */; };
 		2AC7343C1BE72DD6002CC025 /* queryService.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7343A1BE72DD6002CC025 /* queryService.xcdatamodeld */; };
-		2AC7343E1BE72DD6002CC025 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7343D1BE72DD6002CC025 /* ViewController.swift */; };
 		2AC734411BE72DD6002CC025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC7343F1BE72DD6002CC025 /* Main.storyboard */; };
 		2AC734431BE72DD6002CC025 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC734421BE72DD6002CC025 /* Images.xcassets */; };
 		2AC734461BE72DD6002CC025 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC734441BE72DD6002CC025 /* LaunchScreen.xib */; };
 		2AC734521BE72DD6002CC025 /* queryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC734511BE72DD6002CC025 /* queryServiceTests.swift */; };
+		2AC7345C1BE730A8002CC025 /* QueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7345B1BE730A8002CC025 /* QueryTableViewController.swift */; };
+		2AC7345E1BE733E2002CC025 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7345D1BE733E2002CC025 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +32,14 @@
 		2AC734371BE72DD6002CC025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AC734381BE72DD6002CC025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC7343B1BE72DD6002CC025 /* queryService.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = queryService.xcdatamodel; sourceTree = "<group>"; };
-		2AC7343D1BE72DD6002CC025 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2AC734401BE72DD6002CC025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AC734421BE72DD6002CC025 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2AC734451BE72DD6002CC025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2AC7344B1BE72DD6002CC025 /* queryServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = queryServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC734501BE72DD6002CC025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AC734511BE72DD6002CC025 /* queryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queryServiceTests.swift; sourceTree = "<group>"; };
+		2AC7345B1BE730A8002CC025 /* QueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTableViewController.swift; sourceTree = "<group>"; };
+		2AC7345D1BE733E2002CC025 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				2AC734381BE72DD6002CC025 /* AppDelegate.swift */,
-				2AC7343D1BE72DD6002CC025 /* ViewController.swift */,
+				2AC7345B1BE730A8002CC025 /* QueryTableViewController.swift */,
 				2AC7343F1BE72DD6002CC025 /* Main.storyboard */,
+				2AC7345D1BE733E2002CC025 /* CommentTableViewCell.swift */,
 				2AC734421BE72DD6002CC025 /* Images.xcassets */,
 				2AC734441BE72DD6002CC025 /* LaunchScreen.xib */,
 				2AC7343A1BE72DD6002CC025 /* queryService.xcdatamodeld */,
@@ -215,9 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AC7343E1BE72DD6002CC025 /* ViewController.swift in Sources */,
 				2AC7343C1BE72DD6002CC025 /* queryService.xcdatamodeld in Sources */,
+				2AC7345C1BE730A8002CC025 /* QueryTableViewController.swift in Sources */,
 				2AC734391BE72DD6002CC025 /* AppDelegate.swift in Sources */,
+				2AC7345E1BE733E2002CC025 /* CommentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
