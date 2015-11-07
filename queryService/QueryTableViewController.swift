@@ -28,27 +28,32 @@ class QueryTableViewController: UITableViewController, UISearchBarDelegate, UISe
     let queryPostBodyURL = "http://localhost:8984/solr/aiyoupost/select?wt=json&indent=true&q=body%3A"
     
     func queryComment(ask: String) {
-        var urlPath: String = queryPostBodyURL + ask + "%0A"
+        let urlPath: String = queryPostBodyURL + ask + "%0A"
         let queryURL = NSURL(string: urlPath)
 
         let session = NSURLSession.sharedSession()
-        var task = session.dataTaskWithURL(queryURL!) {
-           (data, response, error) -> Void in
+        let task = session.dataTaskWithURL(queryURL!) {
+           (jasondata, response, error) -> Void in
             
             if error != nil {
-                println(error.localizedDescription)
+                print(error?.localizedDescription)
             } else {
-                var jsonError: NSError?
-                let obj = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &jsonError)
-                if let resultObj = obj as? NSDictionary {
-                    if let response = resultObj["response"] as? NSDictionary {
-                        if let bodys = response["docs"] as? NSArray {
-                           for body in bodys {
-                              let body = Comment(data: body as! NSDictionary)
-                              self.comments.append(body)
-                           }
+                do{
+                    let obj = try NSJSONSerialization.JSONObjectWithData(jasondata!, options: NSJSONReadingOptions.AllowFragments)
+                    if let resultObj = obj as? NSDictionary {
+                        if let response = resultObj["response"] as? NSDictionary {
+                            if let bodys = response["docs"] as? NSArray {
+                                for body in bodys {
+                                    let body = Comment(data: body as! NSDictionary)
+                                    self.comments.append(body)
+                                }
+                                self.tableView.reloadData()
+                            }
                         }
                     }
+                }
+                catch {
+                    print(error)
                 }
             }
         }
@@ -59,7 +64,6 @@ class QueryTableViewController: UITableViewController, UISearchBarDelegate, UISe
         super.viewDidLoad()
         queryComment("test")
         
-        self.tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
