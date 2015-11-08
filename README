@@ -1,0 +1,7 @@
+This is a example of presenting search result from solr to UITableView
+
+notes:
+1) it depends on the solr server is running.
+
+
+
